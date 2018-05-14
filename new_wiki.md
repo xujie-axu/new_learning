@@ -7,6 +7,7 @@
 - 常用的工具
 - 常用的网站
 - 工作流程
+- PHP知识树
 - F&A
 
 ----------------------------
@@ -66,6 +67,11 @@ password: BwfyZwy
 
 工作流程
 -----------
+
+PHP知识树
+-----------
+### 代码规范
+参见[php代码规范](http://styleguide.baidu.com/style/php/index.html)
 
 F&A
 -----------

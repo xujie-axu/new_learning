@@ -13,9 +13,9 @@
 
 新入职需要阅读的文档
 ----------------------
-[入职文档1](http://wiki.baidu.com/pages/viewpage.action?pageId=487736453)
-[入职文档2](http://wiki.baidu.com/pages/viewpage.action?pageId=487736453)
-[入职wiki](http://wiki.baidu.com/pages/viewpage.action?pageId=479986941)
+- [入职文档1](http://wiki.baidu.com/pages/viewpage.action?pageId=487736453)
+- [入职文档2](http://wiki.baidu.com/pages/viewpage.action?pageId=487736453)
+- [入职wiki](http://wiki.baidu.com/pages/viewpage.action?pageId=479986941)
 
 环境安装
 -----------

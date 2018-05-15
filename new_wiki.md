@@ -8,7 +8,7 @@
 - 常用的网站
 - 工作流程
 - PHP知识树
-- F&A
+- Q&A
 
 ----------------------------
 
@@ -67,11 +67,52 @@ password: BwfyZwy
 
 工作流程
 -----------
+### 上线流程
+#### 小需求
+- 针对需求：[pv入口修复](http://newicafe.baidu.com/issue/iknownew-2379/show?from=page)
+- 上线模块：server-wap-mobile
+
+```flow
+st=>start: START
+e=>end
+cond1=>condition: 询问QA是否需要测试？
+op1=>operation: 测试
+op2=>operation: 访问[agile](http://agile.baidu.com/#/dashboard/baidu/iknow/server-wap-mobile)到对应项目
+op3=>operation: 切换到BranchPipeline,选择对应的分支按步操作到发布。
+op4=>operation: 访问[上线管理](http://orp.baidu.com/user/UserProduct/)选择对应产品线
+op5=>operation: 选择【上线变更】-- 【发起上线】，填写上线单名称，命名规则："需求说明_cr:xxx_qa:xxx",提交
+op6=>operation: 进入到上线单页，按步进行上线操作。点击准备阶段的上线
+op7=>operation: 点击预览机上线，上线完毕，查看线上wap页中需求是否已上线
+op8=>operation: 点击单台，查看机器名，通过relay登录该台机器，查看日志： log/hhvm/hhvm_error.log  log/mobile/mobile.log.wf
+
+st->cond1
+cond1(yes)->op1->op2
+cond1(no)->op2
+op2->op3->op4->op5->op6->op7->op8
+```
+
+ps: 预览上线完时，查看线上wap页时，需注意两点：
+
+- url域名改为：http://test.iknow.jx-orp.int.baidu.com/
+- 输入脚本：
+
+```javascript
+javascript:void function(){
+    var d=new Date();
+    document.cookie.indexOf('FIS_WAP_DEBUG=YlwtSmt')===-1?d.setFullYear(d.getFullYear()+1):d.setFullYear(d.getFullYear()-1);
+    document.cookie='FIS_WAP_DEBUG=YlwtSmt;
+    path=/;
+    expires='+d.toGMTString()+'';
+    document.cookie='DEBUG_WAP_SINGLE_MACHINE=1;
+    path=/;
+    expires='+d.toGMTString()+'';
+    location.reload()}();
+```
 
 PHP知识树
 -----------
 ### 代码规范
 参见[php代码规范](http://styleguide.baidu.com/style/php/index.html)
 
-F&A
+Q&A
 -----------

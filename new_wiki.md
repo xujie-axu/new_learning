@@ -72,6 +72,7 @@ password: BwfyZwy
 - 针对需求：[pv入口修复](http://newicafe.baidu.com/issue/iknownew-2379/show?from=page)
 - 上线模块：server-wap-mobile
 
+
 ```flow
 st=>start: START
 e=>end
@@ -88,7 +89,7 @@ op8=>operation: 点击单台，查看机器名，通过relay登录该台机器�
 st->cond1
 cond1(yes)->op1->op2
 cond1(no)->op2
-op2->op3->op4->op5->op6->op7->op8
+op2->op3->op4->op5->op6->op7->op8->e
 ```
 
 ps: 预览上线完时，查看线上wap页时，需注意两点：
